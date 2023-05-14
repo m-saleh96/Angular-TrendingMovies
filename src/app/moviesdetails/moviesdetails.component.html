@@ -1,0 +1,19 @@
+
+
+<div class="row">
+    <div class="col-md-4">
+        <img [src]="imgPrefix+moviedetails?.poster_path" alt="">
+    </div>
+
+    <div class="col-md-8">
+        <h2 class="my-2">{{moviedetails?.title}}{{moviedetails?.name}}</h2>
+        <p class="my-2 secondFontColor">{{moviedetails?.tagline}}</p>
+
+        <span class="bg-info p-1 rounded mx-2" *ngFor="let gen of moviedetails?.genres">{{gen.name}}</span>
+        <p class="my-2 lead secondFontColor">{{moviedetails?.overview}}</p>
+    </div>
+
+
+
+
+</div>

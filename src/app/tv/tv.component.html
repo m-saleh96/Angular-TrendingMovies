@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-4 px-5">
+        <div class="brdr w-25 my-3"></div>
+        <h2>Trending <br>
+            tv Show <br>
+            to watch now
+        </h2>
+        <div class="brdr w-100 my-3"></div>
+    </div>
+    <div *ngFor="let tv of trendingTv" class="col-md-2 position-relative">
+        <div [routerLink]="['/moviedetails' , tv.media_type , tv.id]" class="tv my-2">
+            <img [src]="imgPrefix+tv.poster_path" class="img-fluid" alt="">
+            <h3 class="h6 my-2">{{tv.title}}{{tv.name}}</h3>
+            <div class="vote">{{tv.vote_average}}</div>
+        </div>     
+    </div>
+</div>
