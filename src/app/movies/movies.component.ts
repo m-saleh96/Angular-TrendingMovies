@@ -15,12 +15,13 @@ export class MoviesComponent implements OnInit {
       data.results.sort(function (a:any , b:any) {
         return a.vote_average - b.vote_average;
       })
-      this.trendingMovies = data.results.reverse();
+      this.trendingMovies = data.results.reverse()
+     
 
     });
   }
 
-  ngOnInit(): void {
+  ngOnInit():void {
   }
 
 }

@@ -11,7 +11,7 @@
         <div [routerLink]="['/moviedetails' , movie.media_type , movie.id ]" class="movie my-2">
             <img [src]="imgPrefix+movie.poster_path" class="img-fluid" alt="">
             <h3 class="h6 my-2">{{movie.title}}{{movie.name}}</h3>
-            <div class="vote">{{movie.vote_average}}</div>
+            <div class="vote">{{movie.vote_average.toFixed(2)}}</div>
         </div>     
     </div>
 
@@ -29,7 +29,7 @@
         <div [routerLink]="['/moviedetails' , tv.media_type , tv.id]" class="tv my-2">
             <img [src]="imgPrefix+tv.poster_path" class="img-fluid" alt="">
             <h3 class="h6 my-2">{{tv.title}}{{tv.name}}</h3>
-            <div class="vote">{{tv.vote_average}}</div>
+            <div class="vote">{{tv.vote_average.toFixed(2)}}</div>
         </div>     
     </div>
 </div>
