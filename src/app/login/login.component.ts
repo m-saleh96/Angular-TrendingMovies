@@ -26,17 +26,19 @@ export class LoginComponent implements OnInit {
   getLoginInfo(loginForm:any)
   {
     if(loginForm.valid == true){
-      // this._AuthService.login(loginForm.value).subscribe((data)=>{
-      //   if (data.message == 'success') {
-          this._AuthService.saveCurrentUser("data.user.first_name" , "data.user.last_name" , "data.user.email" , "data.token")
+      this._AuthService.login(loginForm.value).subscribe((data)=>{
+        console.log(data);
+        
+        if (data.message == 'success') {
+          this._AuthService.saveCurrentUser(data.token)
           this._Router.navigate(['/home'])
-        // }
-        // else{
-        //   this.flag = true;
-        //   this.errorMessage = data.message;
-        // }
+        }
+        else{
+          this.flag = true;
+          this.errorMessage = data.message;
+        }
 
-      // })
+      })
     }else{
       this.flag = true;
     }

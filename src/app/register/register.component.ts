@@ -25,15 +25,15 @@ export class RegisterComponent implements OnInit {
   getRegisterInfo(registerForm:any)
   {
     if(registerForm.valid == true){
-      // this._AuthService.register(registerForm.value).subscribe((data)=>{
-      //   if (data.message == 'success') {
+      this._AuthService.register(registerForm.value).subscribe((data)=>{
+        if (data.message == 'success') {
           this._Router.navigate(['/login'])
-      //   }
-      //   else{
-          // this.flag = true
-      //   }
+        }
+        else{
+          this.flag = true
+        }
 
-      // })
+      })
     } else{
       this.flag = true
     }

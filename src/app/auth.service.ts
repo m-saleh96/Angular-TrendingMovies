@@ -27,14 +27,14 @@ export class AuthService {
 
   register(registerFormValue:any):Observable<any>
   {
-    return this._HttpClient.post('http://routeegypt.herokuapp.com/signup' , registerFormValue)
+    return this._HttpClient.post('https://route-movies-api.vercel.app/signup' , registerFormValue)
   }
 
 
   login(loginFormValue:any):Observable<any>
   {
     this._Router.navigate(['/home'])
-    return this._HttpClient.post('http://routeegypt.herokuapp.com/signin' , loginFormValue)
+    return this._HttpClient.post('https://route-movies-api.vercel.app/signin' , loginFormValue)
   }
 
   logOut(){
@@ -45,9 +45,10 @@ export class AuthService {
   }
 
 
-  saveCurrentUser(first_name:any , last_name:any , email:any , token:any)
+  // saveCurrentUser(first_name:any , last_name:any , email:any , token:any)
+  saveCurrentUser(token:any)
   {
-    let user = new userData(first_name , last_name , email , token);
+    let user = new userData(token);
     localStorage.setItem('userData' , JSON.stringify(token))
     this.currentUsers.next(token);
     
